@@ -1,8 +1,74 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@page
+@{
+    ViewData["Title"] = "Financial Planning";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <style>
+        /* Menu drop-down */
+        body {
+            margin: 0;
+        }
+        .menu-container {
+            position: fixed;
+            top:10px;
+            right: 10px;
+            z-index: 1000;
+            display: inline-block;
+        }
+        .menu-button{
+            font-size: 18px;
+        }
+        .dropdown-menu {
+            display: none;
+        }
+        .menu-container:hover .dropdown-menu {
+            display: block;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1000;
+        }
+	.dropdown-menu button{
+		display: block;
+	}
+	.dropdown-menu button:hover {
+		background-color: #B0C4DE
+	}
+ </style>
+}
+
+   <!-- Menu features -->
+		 <div class="menu-container">
+			<button class="menu-button">☰</button>
+			<div class="dropdown-menu">
+                <button onclick="viewPastSpending()">View Past Spending</button>
+                <button onclick="viewBudget()">View Potential Budget</button>
+                <button onclick="viewGoals()">Goals and Reward System</button>
+                <button onclick="viewEducation()">Education</button>
+			</div>
+		</div>
+
+    <div class="text-center">
+        <h1 class="display-4">Spend Smarter</h1>
+        <p>Learn about <a href="https://www.pnc.com/en/personal-banking.html">Striving Towards Financial Literacy</a>.</p>
+    </div>
+@section Scripts {
+    <script>
+        function viewPastSpending() {
+            alert("Viewing past spending...");
+        }
+        function viewBudget() {
+            alert("Viewing potential budget...");
+        }
+        function viewGoals() {
+            alert("Goals and reward system...");
+        }
+        function viewEducation() {
+            alert("Education section...");
+        }
+    </script>
+}
