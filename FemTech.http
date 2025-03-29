@@ -1,0 +1,6 @@
+@FemTech_HostAddress = http://localhost:5246
+
+GET {{FemTech_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
